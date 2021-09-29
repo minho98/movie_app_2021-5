@@ -6,7 +6,7 @@
 return (<br>
 <Food name= {dish.name} picture={dish.Image}/>  )<br>
 를 한줄로 요약한게 밑에 const 구문이다 <br>
-const renderFood = dish => <Food name= {dish.name} picture={dish.Image}/><br>
+const renderFood = dish => <Food name= {dish.name} picture={dish.Image}/> <br>
 * 오늘 수업 압축 내용 코드
 function App() {<br>
     return (<br>
