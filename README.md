@@ -1,5 +1,15 @@
 # 김민호 201740204
 
+[ 9월 29일 ]
+* 음식 데이터에 rating 추가하기
+ 1. 값의 자료형은 number을 사용한다.
+ 2. props의 자료형을 검사할 수 있도록 만들어 주는 prop-types라는 도구가 필요하다.
+ 3. 터미널에서 npm install prop-types 입력후 설치한다.
+ 4.  Package.json 파일을 열어 dependencies 키에 있는 값에서 prop-types가 등록되어 있는지 확인한다.
+ 5. import PropTypes from ‘prop-types’;를 추가해야 한다
+ 6. 실행을 했는데 오류창이 떳으면 rating: PropTypes.string.isRequired 대신 rating: PropTypes.number.isRequired 로 교체해서 실행하면 된다.
+
+
 [ 9월 15일 ]
 
  function renderFood(dish) {<br>
