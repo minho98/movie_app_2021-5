@@ -8,6 +8,31 @@
  4.  Package.json 파일을 열어 dependencies 키에 있는 값에서 prop-types가 등록되어 있는지 확인한다.
  5. import PropTypes from ‘prop-types’;를 추가해야 한다
  6. 실행을 했는데 오류창이 떳으면 rating: PropTypes.string.isRequired 대신 rating: PropTypes.number.isRequired 로 교체해서 실행하면 된다.
+ ----------------------------------------
+ * state로 숫자 증감 기능 만들어 보기
+ ~~~ javascript 
+ state = {
+    count:0
+  }
+
+  add = () =>{
+    this.setState({count : this.state.count +1})
+    // console.log('add');
+  }
+
+  minus = () =>{
+    this.setState({count : this.state.count -1})
+    // console.log('minus');
+  }
+  render(){
+    console.log('render');
+    return (
+      <div>
+      <h1>The number is:{this.state.count}</h1>
+      <button onClick={this.add}>Add</button>
+      <button onClick={this.minus}>minus</button>
+      </div>
+~~~
 
 
 [ 9월 15일 ]
