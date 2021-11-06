@@ -6,7 +6,7 @@
 - 협업을 할 때는 팀원들 각자의 컴퓨터에 같은 패키지들을 설치해서 동일한 개발환경을 구성해야 하는게 이때 사용하는 것이 package.json이다. 
 - package-lock.json은 package.json 이 변경될 때 마다 업데이트 되는 것으로 좀더 정확한 버전이기록되어 있다.
 
-
+수업시간에 한  중요코드들 기록하기
 * navigation.js 코드
 ~~~javascript
 import {Link} from 'react-router-dom'
@@ -20,9 +20,31 @@ function Navigation() {
         </div>
     )
 }
+export default Navigation
 ~~~
 
-export default Navigation
+* detail.js 코드
+~~~javascript
+import React from "react";
+
+class Detail extends React.Component{
+    componentDidMount(){
+        const { location, history} = this.props
+        if(location.state === undefined){
+            history.push("/")
+        }
+    }
+    render(){
+        return(
+            <span>Hello</span>
+        )
+    }
+}
+
+export default Detail
+~~~
+
+
 
 [ 10월 6일 ]
 * 
