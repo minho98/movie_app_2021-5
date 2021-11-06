@@ -1,5 +1,67 @@
 # 김민호 201740204
 
+[ 11월 3일 ]
+* package.json과 package-lock.json 차이
+- package.json은 패기지 의존성 관리 파일이다. 
+- 협업을 할 때는 팀원들 각자의 컴퓨터에 같은 패키지들을 설치해서 동일한 개발환경을 구성해야 하는게 이때 사용하는 것이 package.json이다. 
+- package-lock.json은 package.json 이 변경될 때 마다 업데이트 되는 것으로 좀더 정확한 버전이기록되어 있다.
+
+
+* navigation.js 코드
+~~~javascript
+import {Link} from 'react-router-dom'
+import './Navigation.css'
+
+function Navigation() {
+    return(
+        <div className="nav">
+        <Link to='/'>Home</Link>
+        <Link to='/about'>About</Link>
+        </div>
+    )
+}
+~~~
+
+export default Navigation
+
+[ 10월 6일 ]
+* 
+~~~javascript
+import React from "react"
+import axios from "axios"
+
+class App extends React.Component{
+    state = {
+        isLoading: true,
+        movies: []
+    }
+
+    getMovies = async () => {
+      const{
+        data: {
+          data: {movies}
+        }
+      }= await axios.get("https://yts-proxy.now.sh/list_movies.json")
+      // const movies 
+      console.log(movies.data.data.movies);
+    }
+
+    componentDidMount(){
+      this.getMovies()
+    }
+    render(){
+        const {isLoading} = this.state
+        return(
+            <div>
+                { isLoading ? 'Loading...' : '영호ㅏ 데이터 출력'}
+            </div>
+        )
+    }
+
+}
+
+export default App
+~~~
 [ 9월 29일 ]
 * 음식 데이터에 rating 추가하기
  1. 값의 자료형은 number을 사용한다.
