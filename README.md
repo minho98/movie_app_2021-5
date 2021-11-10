@@ -1,5 +1,7 @@
 # 김민호 201740204
 
+[ 11월 10일]
+
 [ 11월 3일 ]
 * package.json과 package-lock.json 차이
 - package.json은 패기지 의존성 관리 파일이다. 
@@ -8,6 +10,7 @@
 
 수업시간에 한  중요코드들 기록하기
 * navigation.js 코드
+Home과 About이라는 2개의 버튼을 만들고, 각각의 버튼을 눌렸을 때 해당 화면이 보인다
 ~~~javascript
 import {Link} from 'react-router-dom'
 import './Navigation.css'
