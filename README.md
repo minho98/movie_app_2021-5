@@ -2,6 +2,87 @@
 
 [ 11월 10일]
 
+오늘의 수업 중요 포인트 :  
+npm install gh-pages 설치해야 실행가능
+배포기능 : npm run deploy
+
+min 파일
+줄바꿈을 다 없애버리고 한줄로 사용.-> 줄바꿈도 1byte 이기 때문에 500줄 짜리 한줄로 만들면 500byte 줄일수 있음./배포할때는 min 파일로 해야함.
+* 홈페이지 url주소 :  "homepage": "https://minho98.github.io/movie_app_2021-5"
+
+* Home.js 코드
+~~~javascript
+import React from "react"
+import axios from "axios"
+import Movie from "../components/Movie"
+import "./Home.css"
+
+class Home extends React.Component{
+  state = {
+    isLoading : true,
+    movies : []
+  }
+
+  getMovies = async() => {
+    const{
+      data: {
+        data : {movies}
+      }
+    } = await axios.get('https://yts-proxy.now.sh/list_movies.json?sort_by=rating')
+    this.setState({movies, isLoading: false})
+  }
+
+  componentDidMount(){
+   this.getMovies()
+  }
+  render() {
+    const { isLoading, movies } = this.state
+    return(
+      <section className='container'>
+        { isLoading ?
+        ( <div className='loader'>
+          <span className='loader-text'> Loading....</span>
+          </div>
+          ) : (
+            <div className='movies'>
+              {
+                movies.map((movie) => {
+                  return <Movie 
+                          key = {movie.id}
+                          id = {movie.id}
+                          year = {movie.year}
+                          title = {movie.title}
+                          summary = {movie.summary}
+                          poster = {movie.medium_cover_image}
+                          genres = {movie.genres}
+                          />
+                        })}
+            </div>
+          )}
+        </section>
+    )
+  }
+}
+
+export default Home;
+~~~
+* about.js 코드
+~~~javascript
+import './About.css'
+
+function About(props) {
+    console.log(props);
+    return(
+        <div className='about-container'>   
+        <span><h1>Hello!!</h1></span>
+        </div>
+    )
+}
+
+export default About
+~~~
+
+
 [ 11월 3일 ]
 * package.json과 package-lock.json 차이
 - package.json은 패기지 의존성 관리 파일이다. 
