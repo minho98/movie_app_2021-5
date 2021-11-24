@@ -1,5 +1,39 @@
 # 김민호 201740204
 
+[ 11월 17일]
+* todolist 요소
+-  todoapp 과 todolist 두개의 컴포넌트로 구성 하고 유저입력을 강제로 대문자로 변경할 경우에도 사용한다
+-  handlechange는 모든키보드 입력마다 리액트의 state를 갱신해서 보여준다
+* 외부 플러그인을 사용하는 컴포넌트
+- 외부 컴포넌트를 사용한 markdown 에디터이다
+- 다만 외부 플러그인은 remarkable
+
+기본 필수 태그
+~~~javascript
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script crossorigin src="..."></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+
+    </script>    
+</head>
+<body>
+    <div id=""></div>
+</body>
+</html>
+~~~
+
+
+
 [ 11월 10일]
 
 오늘의 수업 중요 포인트 :  
